@@ -1,0 +1,6 @@
+words:
+  class: File
+  path: words.txt
+pyf:
+  class: File
+  path: arg.py
