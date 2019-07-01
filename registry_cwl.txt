@@ -1,0 +1,12 @@
+	In the process of converting python-developed data-intensive streamable workflows to CWL workflows, we firstly need to define the registrable components of each workflow kind. Since DISPEL-based specifications such as DISPEL[1] itself and dispel4py[2] have already been developed, registrable components of CWL workflows will be compared with the former ones.
+
+	The first of the two categories of registrable components that are mentioned in the dispel4py registry paper[3] is "Workflow Components". Specifically, these components are: Processing Element (PE) type, function, literal, implementation, connection, data type and workflow. Breaking down CWL workflows we can extract information about their structure and their correspondance with dispel4py workflows.
+
+	We can relate PEs to CWL steps that can be executed either in serial or in parallel. Steps do not have explicit type declarations, but they can be described by the label and id field. Function can be related to the CWL file name specified in the run field. That file can be either a CWL file of type (class) "CommandLineTool" or "Workflow". The latter corresponds to a sub-workflow in CWL. dispel4py literal is a named Dispel literal. Such literals may be scientific constants, data-store references, etc.[3] CWL offers the capability of passing constatnt values in the input assignment file of type with the extension .yml by typing the value in the input field (e.g. input_id: constant_value). So the registrable literal of CWL can be obtained from the mentioned file. The CWL version of implementation can be the code written inside the aforementioned CWL file. As far as connection is concerned, CWL specification offers in and out fields that contain input and output names (id's) respectively. Connection data type in CWL can be found in the CWL file under the run field. Note: streams in CWL can be implemented by setting streamable field to true under each I/O field of the workflow steps and/or each CWL sub-file specified under run field of each step. Workflow component can be related to the CWL file that composes the workflow
+
+	References
+	----------
+
+	[1] Atkinson MP, Liew MG, Sun C, et al. (2012) Data-intensive architecture for scientific knowledge discovery
+	[2] Filguiera R, Krause A, Atkinson M, Klampanos I, Moreno A (2016) dispel4py: A Python framework for 				data-intensive scientific computing
+	[3] Klampanos IA, Martin P, Atkinson MP (2015) Consistency and Collaboration for Fine-Grained Scientific Workflow 	  Development: The dispel4py Information Registry
