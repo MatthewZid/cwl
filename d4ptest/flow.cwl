@@ -1,9 +1,6 @@
 cwlVersion: v1.0
 class: Workflow
 
-requirements:
-  ScatterFeatureRequirement: {}
-
 inputs:
   prodpy: File
   countpy: File
