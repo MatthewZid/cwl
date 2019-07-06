@@ -1,0 +1,15 @@
+prodpy:
+  class: File
+  path: rndm_prod.py
+
+countpy:
+  class: File
+  path: count.py
+
+averagepy:
+  class: File
+  path: average.py
+
+reducepy:
+  class: File
+  path: reduce.py
